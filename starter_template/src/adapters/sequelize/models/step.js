@@ -1,8 +1,7 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+"use strict";
+
+import { Model } from "sequelize";
+export default (sequelize, DataTypes) => {
   class Step extends Model {
     /**
      * Helper method for defining associations.
@@ -10,14 +9,20 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Step.belongsToMany(models.Form, { through: 'FormStep', foreignKey: 'stepId' });
+      Step.belongsToMany(models.Form, {
+        through: "FormStep",
+        foreignKey: "stepId",
+      });
     }
   }
-  Step.init({
-    title: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Step',
-  });
+  Step.init(
+    {
+      title: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "Step",
+    }
+  );
   return Step;
 };
