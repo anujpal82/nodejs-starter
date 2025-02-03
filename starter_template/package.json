@@ -1,0 +1,25 @@
+{
+  "name": "starter_template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon node src/adapters/express/server.js",
+    "migrate": "sequelize db:migrate",
+    "generate:model": "npx sequelize-cli model:generate --name $MODEL_NAME --attributes $ATTRIBUTES"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "pg": "^8.13.1",
+    "pgsql": "^1.0.0",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
+}
